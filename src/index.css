@@ -1,0 +1,268 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%; /* Optional: ensure full width */
+  height: 100%; /* Optional: ensure full height */
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: 'IcelandWinterstorm'; /* Ensure this matches what you use later */
+  src: url('./assets/fonts/IcelandWinterstorm.otf') format('opentype'); /* Use the correct path */
+}
+
+@font-face {
+  font-family: 'Distropiax';
+  src: url('./assets/fonts/Distropiax-bde4.woff') format('woff');
+}
+
+:root {
+  font-family: 'Distropiax';
+  line-height: 1.5;
+  font-weight: 100;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.header-container {
+  position: fixed;
+  top: 0;
+  display: flex;
+  width: 100vw;
+  background-image: url('./assets/textures/nebulablack.jpg');
+  flex-direction: row;
+  
+  justify-content: center;
+  gap: 30px;
+  padding: 20px 0px;
+
+  z-index: 1;
+}
+
+.header-button {
+  position: relative;
+  color: rgb(164, 164, 164);
+  text-shadow: -2px -2px rgb(11, 11, 11);
+  font-size: 40px;
+  padding: 0px 40px;
+  z-index: 2;
+  background-image: url('./assets/textures/darkstone.avif');
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  filter: contrast(1.2);
+
+  box-shadow: inset 4px 4px rgba(255, 255, 255, 0.409),
+                    4px 4px rgba(8, 7, 18, 0.8);
+}
+
+.header-button::before {
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.6) 100%);
+  mix-blend-mode: overlay;
+  z-index: 3;
+}
+
+.header-button:hover {
+  color: white;
+  text-shadow: 0 0 30px #fff,
+               0 0 60px #fff;
+}
+
+.header-deco-left {
+  position: absolute;
+  left: 0;
+  top: -120px;
+  width: 20%;
+}
+
+.header-deco-right {
+  position: absolute;
+  right: 0;
+  top: -120px;
+  width: 20%;
+}
+
+.container {
+  position: relative;
+  height: 47vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  z-index: 2;
+}
+
+.contents {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 400px;
+  padding: 10px;
+  align-items: stretch;
+  flex: 1;
+  /*background-color: rgb(122, 69, 69);*/
+  gap: 20px;
+}
+
+.main-content {
+  font-size: 40px;
+  flex: 2;
+  font-family: 'Distropiax';
+  text-align: center;
+  text-shadow: none;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  /*background-color: red;*/
+}
+
+.left-content {
+  flex: 1;
+}
+
+.center-content {
+  flex: 3;
+}
+
+.right-content {
+  flex: 1;
+}
+
+.title {
+  position: relative;
+  font-family: 'Distropiax';
+  font-size: 150px;
+  background-image: linear-gradient(0deg, rgba(71,71,71,1) 0%, rgba(147,147,147,1) 25%, rgba(170,170,170,1) 36%, rgba(255,255,255,1) 47%, rgba(189,189,189,1) 53%, rgba(119,119,119,1) 70%);
+  background-clip: text; /* Clip the background to the text */
+  -webkit-background-clip: text; /* For Safari */
+  color: transparent;
+  animation: floatingText 2.5s infinite ease-in-out,
+             rotatingText 3.7s infinite ease-in-out;
+}
+
+@keyframes floatingText {
+  0% {
+    top: 5px;
+  }
+  50% {
+    top: -5px;
+  }
+  100% {
+    top: 5px;
+  }
+}
+
+@keyframes rotatingText {
+  0% {
+    transform: rotate(-1deg);
+  }
+  50% {
+    transform: rotate(1deg);
+  }
+  100% {
+    transform: rotate(-1deg);
+  }
+}
+
+.wallpaper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('./assets/wallpapers/castle9.jpeg');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.3);
+  z-index: 1;
+}
+
+.contents {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.fire-text {
+  background-image: url('./assets/textures/flames.gif');
+  background-size: cover;
+  animation: fireText 0.3s infinite alternate;
+  text-shadow: 0 0 10px #ffa600;
+}
+
+@keyframes fireText {
+  0% {
+    color: rgb(255, 102, 0);
+    text-shadow: 0 0 10px #ffa600;
+  }
+  100% {
+    color: rgb(255, 183, 0);
+    text-shadow: 0 0 20px #ff8c00,
+                 0 0 10px #ffa600;
+  }
+}
+
+a {
+  font-weight: 500;
+  color: #ffbdbd;
+  text-decoration: inherit;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
