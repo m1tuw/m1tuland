@@ -1,4 +1,5 @@
 import React from 'react';
+import cetrisCard from '../assets/cards/cetris_card.jpg';
 
 export default function ShowcaseContainer(){
     return (
@@ -14,11 +15,11 @@ export function ShowcaseFrame({title, url, description}){
     return <div className="showcase-frame">
         <div className="showcase-inner">
             <div className="showcase-front">
-                {title} <br></br>
-                {description}
+                <img src={cetrisCard} className="card-image"></img>
             </div>
             <div className="showcase-back">
-                insert image here
+                {title} <br></br>
+                {description}
             </div>
         </div>
     </div>
