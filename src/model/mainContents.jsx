@@ -1,5 +1,6 @@
 import React from 'react';
 import ShowcaseContainer from './projectShowcase.jsx';
+import ProblemShowcase from './problemShowcase.jsx';
 
 export default function MainContent(){
     return (
@@ -17,12 +18,14 @@ export default function MainContent(){
 
 export function LeftContent(){
     return (
-        <div className="main-content left-content">  </div>
+        <div className="main-content left-content"> goated problems
+            <ProblemShowcase />
+        </div>
     );
 }
 
 export function RightContent(){
     return (
-        <div className="main-content right-content">  </div>
+        <div className="main-content right-content"> ipsum lorem </div>
     );
 }

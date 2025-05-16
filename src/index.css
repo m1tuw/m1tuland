@@ -132,6 +132,7 @@ html, body {
 }
 
 .left-content {
+  font-family: 'Arial';
   flex: 1;
 }
 
@@ -236,6 +237,26 @@ h1 {
   line-height: 1.1;
 }
 
+.problem-showcase {
+  list-style: none;
+}
+
+.problem-container {
+  font-size: 25px;
+  display: flex;
+}
+
+.problem-container-left {
+  background-color:rgb(255, 183, 0);
+  flex: 2;
+}
+
+.problem-container-right {
+  background-image: url('./assets/textures/marble.jpg');
+  
+  flex: 3;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -254,6 +275,7 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
 
 @media (prefers-color-scheme: light) {
   :root {
